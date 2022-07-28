@@ -25,13 +25,13 @@ fruitList = {
 # Bind a URI to the function
 # GET request - retrieve the full 'fruits' list
 @app.route("/myshop.com/fruits", methods=['GET'])
-def get_fruits(id=1):
+def get_fruits():
     # Return the 'fruits' list in JSON
     return json.dumps(fruitList)
 
 # POST request - add a fruit to the 'fruits' list
 @app.route("/myshop.com/fruits", methods=['POST'])
-def post_fruits(id=2):
+def post_fruits():
     # Add the request data to the end of the list
     fruitList["fruits"].append(str(request.form["fruit"]))
 
@@ -40,7 +40,7 @@ def post_fruits(id=2):
 
 # PUT request - overwrites the 'fruits' list
 @app.route("/myshop.com/fruits", methods=['PUT'])
-def put_fruits(id=3):
+def put_fruits():
     # Empty the list of fruits
     fruitList["fruits"].clear()
 
@@ -52,7 +52,7 @@ def put_fruits(id=3):
 
 # DELETE request - empty the fruits 'fruits' list
 @app.route("/myshop.com/fruits", methods=['DELETE'])
-def delete_fruits(id=4):
+def delete_fruits():
     # Empty the list of fruits
     fruitList["fruits"].clear()
     
